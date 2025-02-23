@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://chbdeku86l8uj"]
+
+[ext_resource type="Texture2D" uid="uid://4ec26rqta3u7" path="res://assets/Jeffrey-plant.png" id="1_248q6"]
+[ext_resource type="Script" path="res://scripts/customer.gd" id="2_rmutj"]
+[ext_resource type="Script" path="res://scripts/display.gd" id="3_hscex"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.529067, 0.529067, 0.529067, 1)
+
+[node name="Customer" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_248q6")
+script = ExtResource("2_rmutj")
+looks = Array[String](["res://assets/Jeffrey-plant.png"])
+
+[node name="Display" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 403.0
+offset_top = 353.0
+offset_right = 484.0
+offset_bottom = 427.0
+script = ExtResource("3_hscex")
+
+[node name="TextureButton" type="TextureButton" parent="Display"]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture_normal = ExtResource("1_248q6")
+stretch_mode = 0
+
+[node name="Minigame" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultRect" type="TextureRect" parent="Minigame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Display/TextureButton" to="Display" method="pressedDisplay"]
