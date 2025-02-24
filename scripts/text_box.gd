@@ -16,7 +16,6 @@ var punctuationTime = 0.2
 
 signal finished_displaying()
 
-
 #display a dialogue in text
 func displayText(text_to_display: String):
 	text = text_to_display
@@ -31,7 +30,7 @@ func displayText(text_to_display: String):
 		custom_minimum_size.y = size.y
 	
 	global_position.x -= size.x / 2
-	global_position.y -= size.y + 25
+	global_position.y = size.y - 25
 	
 	label.text = ""
 	displayLetter()
@@ -64,6 +63,7 @@ func displayOrder(image_to_display: String):
 		await resized #await y resize
 		custom_minimum_size.y = size.y
 	
+	#put textbox above customer
 	global_position.x -= size.x / 2
-	global_position.y -= size.y + 25
+	global_position.y = GameManager.customer.global_position.y / 4
 	texture.texture = load(image_to_display)

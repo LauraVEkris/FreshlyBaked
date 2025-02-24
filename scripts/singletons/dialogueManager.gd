@@ -12,6 +12,7 @@ var image
 #state variables
 var is_dialogue_active = false
 var can_advance_line = false
+signal deletedBox()
 
 #start dialogue for text
 func startDialogue(lines: Array[String]):
@@ -24,7 +25,6 @@ func startDialogue(lines: Array[String]):
 
 
 func showTextbox():
-	if !textbox: return
 	textbox = textboxScene.instantiate()
 	textbox.finished_displaying.connect(textboxFinishedDisplaying)
 	get_tree().root.add_child(textbox)
@@ -47,7 +47,6 @@ func startOrder(order: String):
 
 
 func showOrder():
-	if !textbox: return
 	textbox = textboxScene.instantiate()
 	get_tree().root.add_child(textbox)
 	textbox.global_position = textboxPosition
@@ -65,10 +64,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		if currentLineIndex >= dialogueLines.size():
 			is_dialogue_active = false
 			currentLineIndex = 0
+			deletedBox.emit()
 			return
 		showTextbox()
 
+#delete textbox manually and reset states
 func deleteTextbox():
 	is_dialogue_active = false
 	can_advance_line = false
+	deletedBox.emit()
 	textbox.queue_free()

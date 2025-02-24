@@ -15,10 +15,17 @@ var lines:Array[String]
 func _ready() -> void:
 	days = 0
 	points = 0
+
+
+func startGame():
 	#start the first day
 	lines = ["Your first day in a new town, with new people",
 	"you enter your bakery, ready for a fresh start"]
 	DialogueManager.startDialogue(lines)
+	await DialogueManager.deletedBox
+	#wait 3 seconds before first customer
+	await get_tree().create_timer(3).timeout
+	customer.newCustomer()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
