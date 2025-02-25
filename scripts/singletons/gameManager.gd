@@ -16,7 +16,6 @@ func _ready() -> void:
 	days = 0
 	points = 0
 
-
 func startGame():
 	#start the first day
 	lines = ["Your first day in a new town, with new people",
@@ -27,9 +26,15 @@ func startGame():
 	await get_tree().create_timer(3).timeout
 	customer.newCustomer()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#process that an order was finished
+func doneOrder(gainedPoints:int, order):
+	if order != customer.order: return
+	#make sure to delete the order
+	DialogueManager.deleteTextbox()
+	#add points and finish up with customer
+	points += gainedPoints
+	await get_tree().create_timer(2).timeout
+	customer.doneOrder()
 
 func nextDay():
 	if neededPoints == points:

@@ -51,6 +51,7 @@ func showOrder():
 	get_tree().root.add_child(textbox)
 	textbox.global_position = textboxPosition
 	textbox.displayOrder(image)
+	can_advance_line = false
 
 
 func _unhandled_input(event: InputEvent) -> void:

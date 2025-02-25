@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://chbdeku86l8uj"]
+[gd_scene load_steps=5 format=3 uid="uid://chbdeku86l8uj"]
 
 [ext_resource type="Texture2D" uid="uid://4ec26rqta3u7" path="res://assets/Jeffrey-plant.png" id="1_248q6"]
 [ext_resource type="Script" path="res://scripts/customer.gd" id="2_rmutj"]
-[ext_resource type="Script" path="res://scripts/display.gd" id="3_hscex"]
 [ext_resource type="Script" path="res://scripts/minigame.gd" id="4_alnpd"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="4_ku4c5"]
 
@@ -47,9 +46,8 @@ offset_left = 403.0
 offset_top = 353.0
 offset_right = 484.0
 offset_bottom = 427.0
-script = ExtResource("3_hscex")
 
-[node name="TextureButton" type="TextureButton" parent="Display"]
+[node name="BunButton" type="TextureButton" parent="Display"]
 layout_mode = 0
 offset_right = 60.0
 offset_bottom = 60.0
@@ -66,7 +64,6 @@ grow_vertical = 2
 script = ExtResource("4_alnpd")
 
 [node name="ResultRect" type="TextureRect" parent="Minigame"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,14 +85,10 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MinigameRect" type="ColorRect" parent="Minigame"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.3443, 0.769849, 0.680762, 1)
+[node name="resultEffect" type="TextureRect" parent="Minigame/ResultRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Menu" type="Control" parent="."]
 visible = false
@@ -146,6 +139,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
 
-[connection signal="pressed" from="Display/TextureButton" to="Display" method="pressedDisplay"]
+[connection signal="pressed" from="Display/BunButton" to="Minigame" method="startMinigame" binds= ["bun"]]
 [connection signal="pressed" from="Menu/startButton" to="Menu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu/quitButton" to="Menu" method="_on_quit_button_pressed"]
