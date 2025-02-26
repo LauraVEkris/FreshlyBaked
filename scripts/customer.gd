@@ -4,19 +4,14 @@ var order:String
 @export var looks:Array[String]
 @export var orders:Array[String]
 var lookInt:int
-var doneCustomers
+var doneCustomers = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.customer = self
 	self.visible = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func doneOrder():
-	DialogueManager.deleteTextbox()
 	#next customer
 	self.visible = false
 	await get_tree().create_timer(5).timeout
@@ -33,11 +28,12 @@ func newCustomer():
 	self.texture = load(looks[lookInt]) #change to next customer
 	self.visible = true
 	#random order
-	var max = orders.size() - 1
-	var orderNR = randi_range(0,max)
+	var maxNR = orders.size() - 1
+	var orderNR = randi_range(0,maxNR)
 	#start dialogue with order here (order is an image)
 	order = orders[orderNR]
-	DialogueManager.startOrder(orders[orderNR])
+	var orderPath = "res://assets/items/" + order + ".png"
+	DialogueManager.startOrder(orderPath)
 
 func shuffleArr():
 	looks.shuffle()

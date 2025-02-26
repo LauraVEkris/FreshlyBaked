@@ -15,6 +15,7 @@ var lines:Array[String]
 func _ready() -> void:
 	days = 0
 	points = 0
+	neededCustomers = 3
 
 func startGame():
 	#start the first day
@@ -39,7 +40,7 @@ func doneOrder(gainedPoints:int, order):
 func nextDay():
 	if neededPoints == points:
 		#start next day
-		neededPoints += 50
+		neededPoints += 25
 		neededCustomers += randi_range(-1,3)
 		points = 0
 		customer.shuffleArr()

@@ -38,7 +38,7 @@ grow_vertical = 2
 texture = ExtResource("1_248q6")
 script = ExtResource("2_rmutj")
 looks = Array[String](["res://assets/Jeffrey-plant.png"])
-orders = Array[String](["res://assets/red.png", "res://assets/Jeffrey-plant.png"])
+orders = Array[String](["bun", "bun"])
 
 [node name="Display" type="Control" parent="."]
 anchors_preset = 0
@@ -54,7 +54,17 @@ offset_bottom = 60.0
 texture_normal = ExtResource("1_248q6")
 stretch_mode = 0
 
+[node name="CroissantButton" type="TextureButton" parent="Display"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 29.0
+offset_right = 203.0
+offset_bottom = 89.0
+texture_normal = ExtResource("1_248q6")
+stretch_mode = 0
+
 [node name="Minigame" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -140,5 +150,6 @@ grow_vertical = 2
 text = "Quit"
 
 [connection signal="pressed" from="Display/BunButton" to="Minigame" method="startMinigame" binds= ["bun"]]
+[connection signal="pressed" from="Display/CroissantButton" to="Minigame" method="startMinigame" binds= ["croissant"]]
 [connection signal="pressed" from="Menu/startButton" to="Menu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu/quitButton" to="Menu" method="_on_quit_button_pressed"]

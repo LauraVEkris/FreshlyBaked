@@ -41,7 +41,6 @@ func spawnApple():
 		spawnApple()
 		
 func endGame():
-	print("game ended")
 	if applecount <= 3:
 		minigameNode.doneMinigame("fail")
 	elif applecount >= 4 and applecount <= 10:
