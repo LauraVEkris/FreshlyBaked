@@ -35,12 +35,18 @@ func doneMinigame(result):
 		points = 2
 	elif result == "neutral":
 		resultScreen.texture = load("neutralScreen")
+		var pastry = "res://assets/items/" + order + ".png"
+		resultPastry.texture = load(pastry)
 		points = 5
 	elif result == "win":
 		resultScreen.texture = load("winScreen")
+		var pastry = "res://assets/items/" + order + "Win.png"
+		resultPastry.texture = load(pastry)
 		points = 8
 	elif result == "perfect":
 		resultScreen.texture = load("winScreen")
+		var pastry = "res://assets/items/" + order + "Win.png"
+		resultPastry.texture = load(pastry)
 		points = 10
 		resultEffect.visible = true
 	resultScreen.visible = true

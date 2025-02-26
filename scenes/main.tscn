@@ -38,7 +38,7 @@ grow_vertical = 2
 texture = ExtResource("1_248q6")
 script = ExtResource("2_rmutj")
 looks = Array[String](["res://assets/Jeffrey-plant.png"])
-orders = Array[String](["bun", "bun"])
+orders = Array[String](["bun"])
 
 [node name="Display" type="Control" parent="."]
 anchors_preset = 0
