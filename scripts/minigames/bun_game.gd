@@ -1,6 +1,7 @@
 extends Control
 
 @onready var player = $CharacterBody2D
+@onready var countLabel = $Label2
 var minigameNode
 
 var movedRight = 0
@@ -11,6 +12,7 @@ var applecount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	countLabel.text = "0"
 	minigameNode = get_parent()
 	await get_tree().create_timer(3).timeout
 	#spawn apples
@@ -54,5 +56,6 @@ func hitApple(body) -> void:
 	if body.is_in_group("collectable"):
 		#collision with apple gives points
 		applecount += 1
+		countLabel.text = str(applecount)
 		body.queue_free()
 		spawnApple()

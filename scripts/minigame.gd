@@ -61,7 +61,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 #close minigame overlay
 func closeMinigame():
-	get_tree().create_timer(30).timeout.connect(func(): space_pressed.emit())
+	get_tree().create_timer(15).timeout.connect(func(): space_pressed.emit())
 	await space_pressed
 	if resultScreen.visible == true:
 		self.visible = false

@@ -2,6 +2,7 @@ extends Control
 
 @onready var area = $StaticBody2D/Area2D
 @onready var spawnNode = $Marker2D
+@onready var hitsLabel = $Label2
 var minigameNode
 var spawned = 0
 var points = 0
@@ -9,6 +10,7 @@ var points = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	minigameNode = get_parent()
+	hitsLabel.text = "0"
 	spawnBeats()
 	moveBeats()
 
@@ -47,9 +49,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		var deltaDistance = nearest.global_position.x - area.global_position.x
 		if deltaDistance <= 3 and deltaDistance >= -20:
 			points += 3
+			hitsLabel.text = str(points)
+			nearest.queue_free()
+		elif deltaDistance >= 100:
 			nearest.queue_free()
 		else:
 			points += 1
+			hitsLabel.text = str(points)
 			nearest.queue_free()
 
 func endGame():
