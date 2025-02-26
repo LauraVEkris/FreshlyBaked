@@ -10,12 +10,15 @@ var neededCustomers:int
 
 #gamefeel variables
 var lines:Array[String]
+var pointsLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	days = 0
 	points = 0
 	neededCustomers = 3
+	pointsLabel = $pointsLabel
+	pointsLabel.text = "points: " + str(points) + "/" + str(neededPoints)
 
 func startGame():
 	#start the first day
@@ -34,6 +37,7 @@ func doneOrder(gainedPoints:int, order):
 	DialogueManager.deleteTextbox()
 	#add points and finish up with customer
 	points += gainedPoints
+	pointsLabel.text = "points: " + str(points) + "/" + str(neededPoints)
 	await get_tree().create_timer(2).timeout
 	customer.doneOrder()
 

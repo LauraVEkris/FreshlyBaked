@@ -63,6 +63,14 @@ offset_bottom = 89.0
 texture_normal = ExtResource("1_248q6")
 stretch_mode = 0
 
+[node name="CookieButton" type="TextureButton" parent="Display"]
+layout_mode = 0
+offset_left = 266.0
+offset_right = 326.0
+offset_bottom = 60.0
+texture_normal = ExtResource("1_248q6")
+stretch_mode = 0
+
 [node name="MuffinButton" type="TextureButton" parent="Display"]
 layout_mode = 0
 offset_left = 313.0
@@ -158,8 +166,21 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
 
+[node name="pointsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 33.0
+grow_horizontal = 0
+text = "00/00"
+
 [connection signal="pressed" from="Display/BunButton" to="Minigame" method="startMinigame" binds= ["bun"]]
 [connection signal="pressed" from="Display/CroissantButton" to="Minigame" method="startMinigame" binds= ["croissant"]]
+[connection signal="pressed" from="Display/CookieButton" to="Minigame" method="startMinigame" binds= ["cookie"]]
 [connection signal="pressed" from="Display/MuffinButton" to="Minigame" method="startMinigame" binds= ["muffin"]]
 [connection signal="pressed" from="Menu/startButton" to="Menu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu/quitButton" to="Menu" method="_on_quit_button_pressed"]

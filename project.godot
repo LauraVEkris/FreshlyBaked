@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GameManager="*res://scripts/singletons/gameManager.gd"
 DialogueManager="*res://scripts/singletons/dialogueManager.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [global_group]
 
 collectable="this is an item that the player can collect"
