@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://chbdeku86l8uj"]
+[gd_scene load_steps=8 format=3 uid="uid://chbdeku86l8uj"]
 
 [ext_resource type="Texture2D" uid="uid://4ec26rqta3u7" path="res://assets/Jeffrey-plant.png" id="1_248q6"]
+[ext_resource type="Texture2D" uid="uid://dmkf4ofgd54h4" path="res://assets/screens/bakeryInterior.png" id="1_msc7s"]
 [ext_resource type="Script" path="res://scripts/customer.gd" id="2_rmutj"]
+[ext_resource type="Texture2D" uid="uid://bxsbr4an5q6ce" path="res://assets/items/counter.png" id="2_s35vk"]
+[ext_resource type="Texture2D" uid="uid://chvi07rc5st0j" path="res://assets/items/bun.png" id="4_6ta7e"]
 [ext_resource type="Script" path="res://scripts/minigame.gd" id="4_alnpd"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="4_ku4c5"]
 
@@ -13,14 +16,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.529067, 0.529067, 0.529067, 1)
+texture = ExtResource("1_msc7s")
 
 [node name="Customer" type="TextureRect" parent="."]
 layout_mode = 1
@@ -35,10 +38,24 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_248q6")
 script = ExtResource("2_rmutj")
-looks = Array[String](["res://assets/Jeffrey-plant.png"])
+looks = Array[String](["res://assets/characters/goth.png"])
 orders = Array[String](["bun"])
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -352.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_s35vk")
+stretch_mode = 2
 
 [node name="Display" type="Control" parent="."]
 anchors_preset = 0
@@ -49,34 +66,37 @@ offset_bottom = 427.0
 
 [node name="BunButton" type="TextureButton" parent="Display"]
 layout_mode = 0
-offset_right = 60.0
-offset_bottom = 60.0
-texture_normal = ExtResource("1_248q6")
+offset_left = -176.0
+offset_top = 88.0
+offset_right = -112.0
+offset_bottom = 152.0
+texture_normal = ExtResource("4_6ta7e")
 stretch_mode = 0
 
 [node name="CroissantButton" type="TextureButton" parent="Display"]
 layout_mode = 0
-offset_left = 143.0
-offset_top = 29.0
-offset_right = 203.0
-offset_bottom = 89.0
+offset_left = 36.0
+offset_top = 83.0
+offset_right = 96.0
+offset_bottom = 143.0
 texture_normal = ExtResource("1_248q6")
 stretch_mode = 0
 
 [node name="CookieButton" type="TextureButton" parent="Display"]
 layout_mode = 0
-offset_left = 266.0
-offset_right = 326.0
-offset_bottom = 60.0
+offset_left = 147.0
+offset_top = 82.0
+offset_right = 207.0
+offset_bottom = 142.0
 texture_normal = ExtResource("1_248q6")
 stretch_mode = 0
 
 [node name="MuffinButton" type="TextureButton" parent="Display"]
 layout_mode = 0
-offset_left = 313.0
-offset_top = -76.0
-offset_right = 373.0
-offset_bottom = -16.0
+offset_left = 368.0
+offset_top = 71.0
+offset_right = 428.0
+offset_bottom = 131.0
 texture_normal = ExtResource("1_248q6")
 stretch_mode = 0
 

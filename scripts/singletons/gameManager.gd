@@ -10,17 +10,17 @@ var neededCustomers:int
 
 #gamefeel variables
 var lines:Array[String]
-var pointsLabel
+var pointsLabel:Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	days = 0
 	points = 0
 	neededCustomers = 3
-	pointsLabel = $pointsLabel
-	pointsLabel.text = "points: " + str(points) + "/" + str(neededPoints)
 
 func startGame():
+	pointsLabel = $"/root/Control/pointsLabel"
+	pointsLabel.text = "points: " + str(points) + "/" + str(neededPoints)
 	#start the first day
 	lines = ["Your first day in a new town, with new people",
 	"you enter your bakery, ready for a fresh start"]
