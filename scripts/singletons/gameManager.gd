@@ -65,6 +65,7 @@ func nextDay():
 		points = 0
 		pointsLabel.text = "points: " + str(points) + "/" + str(neededPoints)
 		customer.shuffleArr()
+		customer.restartDay()
 	else:
 		#restart day
 		points = 0
