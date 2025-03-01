@@ -14,6 +14,8 @@ func _ready() -> void:
 func doneOrder():
 	#next customer
 	self.visible = false
+	GameManager.bag.visible = false
+	doneCustomers += 1
 	await get_tree().create_timer(5).timeout
 	newCustomer()
 
@@ -40,4 +42,6 @@ func shuffleArr():
 
 func restartDay():
 	lookInt = 0
+	doneCustomers = 0
 	self.texture = load(looks[lookInt])
+	newCustomer()
