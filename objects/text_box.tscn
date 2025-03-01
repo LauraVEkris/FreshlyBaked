@@ -1,15 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp0ndynhe864o"]
 
 [ext_resource type="Script" path="res://scripts/text_box.gd" id="1_63y4b"]
-[ext_resource type="Texture2D" uid="uid://5eplxqu2b8e2" path="res://assets/red.png" id="2_bsm43"]
+[ext_resource type="Texture2D" uid="uid://c5xkdhlnbgadt" path="res://assets/textbox.png" id="2_2kmlu"]
 
 [node name="TextBox" type="MarginContainer"]
 script = ExtResource("1_63y4b")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_bsm43")
-region_rect = Rect2(12.2923, 15.3463, 63.7262, 56.4845)
+texture = ExtResource("2_2kmlu")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 clip_contents = true
@@ -20,6 +24,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true

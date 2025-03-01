@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://chbdeku86l8uj"]
+[gd_scene load_steps=11 format=3 uid="uid://chbdeku86l8uj"]
 
-[ext_resource type="Texture2D" uid="uid://4ec26rqta3u7" path="res://assets/Jeffrey-plant.png" id="1_248q6"]
 [ext_resource type="Texture2D" uid="uid://dmkf4ofgd54h4" path="res://assets/screens/bakeryInterior.png" id="1_msc7s"]
 [ext_resource type="Script" path="res://scripts/customer.gd" id="2_rmutj"]
 [ext_resource type="Texture2D" uid="uid://bxsbr4an5q6ce" path="res://assets/items/counter.png" id="2_s35vk"]
 [ext_resource type="Texture2D" uid="uid://chvi07rc5st0j" path="res://assets/items/bun.png" id="4_6ta7e"]
 [ext_resource type="Script" path="res://scripts/minigame.gd" id="4_alnpd"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="4_ku4c5"]
+[ext_resource type="Texture2D" uid="uid://nfusrqjf7r2i" path="res://assets/items/croissant.png" id="5_arq1r"]
+[ext_resource type="Texture2D" uid="uid://cec7l6o63yew" path="res://assets/items/cookie.png" id="6_s0kyp"]
+[ext_resource type="Texture2D" uid="uid://dx3nllcsmxm5h" path="res://assets/items/muffin.png" id="7_wep2n"]
+[ext_resource type="Texture2D" uid="uid://dynxucq11qie1" path="res://assets/screens/winEffect.png" id="9_8anpk"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -40,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_rmutj")
 looks = Array[String](["res://assets/characters/goth.png"])
-orders = Array[String](["bun"])
+orders = Array[String](["bun", "croissant", "cookie", "muffin"])
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
@@ -79,25 +82,25 @@ offset_left = 36.0
 offset_top = 83.0
 offset_right = 96.0
 offset_bottom = 143.0
-texture_normal = ExtResource("1_248q6")
+texture_normal = ExtResource("5_arq1r")
 stretch_mode = 0
 
 [node name="CookieButton" type="TextureButton" parent="Display"]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 82.0
+offset_left = 143.0
+offset_top = 73.0
 offset_right = 207.0
-offset_bottom = 142.0
-texture_normal = ExtResource("1_248q6")
+offset_bottom = 137.0
+texture_normal = ExtResource("6_s0kyp")
 stretch_mode = 0
 
 [node name="MuffinButton" type="TextureButton" parent="Display"]
 layout_mode = 0
-offset_left = 368.0
-offset_top = 71.0
-offset_right = 428.0
-offset_bottom = 131.0
-texture_normal = ExtResource("1_248q6")
+offset_left = 356.0
+offset_top = 64.0
+offset_right = 420.0
+offset_bottom = 128.0
+texture_normal = ExtResource("7_wep2n")
 stretch_mode = 0
 
 [node name="Minigame" type="Control" parent="."]
@@ -136,6 +139,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("9_8anpk")
 
 [node name="Menu" type="Control" parent="."]
 visible = false

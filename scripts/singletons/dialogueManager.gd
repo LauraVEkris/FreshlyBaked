@@ -71,6 +71,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 #delete textbox manually and reset states
 func deleteTextbox():
+	if textbox == null: return
 	is_dialogue_active = false
 	can_advance_line = false
 	deletedBox.emit()

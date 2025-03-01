@@ -17,6 +17,7 @@ func _ready() -> void:
 	days = 0
 	points = 0
 	neededCustomers = 3
+	neededPoints = 13
 
 func startGame():
 	pointsLabel = $"/root/Control/pointsLabel"
@@ -47,6 +48,7 @@ func nextDay():
 		neededPoints += 25
 		neededCustomers += randi_range(-1,3)
 		points = 0
+		pointsLabel.text = "points: " + str(points) + "/" + str(neededPoints)
 		customer.shuffleArr()
 	else:
 		#restart day

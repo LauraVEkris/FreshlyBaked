@@ -92,6 +92,12 @@ position = Vector2(0, -3)
 rotation = 0.0136885
 shape = SubResource("CapsuleShape2D_02dgd")
 
+[node name="TextureButton" type="TextureButton" parent="CharacterBody2D"]
+offset_left = -19.0
+offset_top = -23.0
+offset_right = 21.0
+offset_bottom = 17.0
+
 [node name="outerWalls" type="CanvasGroup" parent="."]
 position = Vector2(1151, 288)
 rotation = 0.785398
@@ -192,7 +198,6 @@ shape = SubResource("RectangleShape2D_46kf3")
 [node name="wall4" type="Area2D" parent="obstaclesWalls"]
 position = Vector2(-728, -264)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall4"]
 position = Vector2(-109.081, -152.214)
@@ -208,7 +213,6 @@ shape = SubResource("RectangleShape2D_elcw3")
 [node name="wall5" type="Area2D" parent="obstaclesWalls"]
 position = Vector2(-800, 546)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall5"]
 position = Vector2(-116.224, -159.357)
@@ -236,7 +240,6 @@ shape = SubResource("RectangleShape2D_bihok")
 [node name="wall7" type="Area2D" parent="obstaclesWalls"]
 position = Vector2(-360, 542)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall7"]
 position = Vector2(-111.75, -154.884)
@@ -252,7 +255,6 @@ shape = SubResource("RectangleShape2D_hb1tv")
 [node name="wall8" type="Area2D" parent="obstaclesWalls"]
 position = Vector2(166, 640)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall8"]
 position = Vector2(-111.75, -154.884)
@@ -322,6 +324,7 @@ texture = ExtResource("4_loxvp")
 position = Vector2(44, 38)
 shape = SubResource("RectangleShape2D_knqrl")
 
+[connection signal="pressed" from="CharacterBody2D/TextureButton" to="." method="startTracking"]
 [connection signal="body_entered" from="outerWalls/wall3" to="." method="death"]
 [connection signal="body_entered" from="outerWalls/wall5" to="." method="death"]
 [connection signal="body_entered" from="outerWalls/wall7" to="." method="death"]

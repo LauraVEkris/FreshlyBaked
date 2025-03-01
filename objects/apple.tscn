@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceih86jovvtqu"]
 
 [ext_resource type="Script" path="res://scripts/minigames/apple.gd" id="1_74ufo"]
-[ext_resource type="Texture2D" uid="uid://5eplxqu2b8e2" path="res://assets/red.png" id="1_kp8ew"]
+[ext_resource type="Texture2D" uid="uid://c6xw28wtplsdr" path="res://assets/items/apple.png" id="2_y1so6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jumsr"]
 radius = 78.1025
@@ -13,7 +13,7 @@ script = ExtResource("1_74ufo")
 offset_right = 90.0
 offset_bottom = 90.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_kp8ew")
+texture = ExtResource("2_y1so6")
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfgmyxlkuyik3"]
 
-[ext_resource type="Texture2D" uid="uid://5eplxqu2b8e2" path="res://assets/red.png" id="2_6e0w2"]
+[ext_resource type="Texture2D" uid="uid://dwc8n5lp60i05" path="res://assets/items/note.png" id="1_vj6wm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jumsr"]
 radius = 78.1025
@@ -11,7 +11,7 @@ radius = 78.1025
 offset_right = 90.0
 offset_bottom = 90.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_6e0w2")
+texture = ExtResource("1_vj6wm")
 
 [node name="Area2D" type="Area2D" parent="."]
 

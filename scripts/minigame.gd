@@ -29,22 +29,22 @@ func startMinigame(orderPastry):
 #show result overlay (fail, neutral, win, perfect)
 func doneMinigame(result):
 	if result == "fail":
-		resultScreen.texture = load("failScreen")
+		resultScreen.texture = load("res://assets/screens/failScreen.png")
 		var pastry = "res://assets/items/" + order + "Fail.png"
 		resultPastry.texture = load(pastry)
 		points = 2
 	elif result == "neutral":
-		resultScreen.texture = load("neutralScreen")
+		resultScreen.texture = load("res://assets/screens/neutralScreen.png")
 		var pastry = "res://assets/items/" + order + ".png"
 		resultPastry.texture = load(pastry)
 		points = 5
 	elif result == "win":
-		resultScreen.texture = load("winScreen")
+		resultScreen.texture = load("res://assets/screens/winScreen.png")
 		var pastry = "res://assets/items/" + order + "Win.png"
 		resultPastry.texture = load(pastry)
 		points = 8
 	elif result == "perfect":
-		resultScreen.texture = load("winScreen")
+		resultScreen.texture = load("res://assets/screens/winScreen.png")
 		var pastry = "res://assets/items/" + order + "Win.png"
 		resultPastry.texture = load(pastry)
 		points = 10
