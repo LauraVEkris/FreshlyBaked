@@ -24,6 +24,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.307636, 0.664722, 0.760808, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 536.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.306619, 0.700263, 0.480651, 1)
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 7

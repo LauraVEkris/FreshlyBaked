@@ -11,7 +11,7 @@ var NR
 #start timer on ready
 func _ready() -> void:
 	minigameNode = get_parent()
-	timer = get_tree().create_timer(90)
+	timer = get_tree().create_timer(120)
 	await timer.timeout
 	endGame()
 
@@ -21,20 +21,12 @@ func _process(delta: float) -> void:
 	mousePos = get_viewport().get_mouse_position()
 	if heldNode != null:
 		heldNode.position = mousePos
-		#check if tile is put down in correct position
-		var answerNode = get_node("GridContainer/tileFill" + str(NR))
-		if heldNode.position == answerNode.global_position:
-			answerNode.texture = heldNode.texture_normal
-			heldNode.queue_free()
-			heldNode = null
-			tiles -= 1
-			if tiles == 0:
-				endGame()
 
 #pick up and put down a tile
 func holdTile(number):
 	if heldNode != null:
 		heldNode = null
+		NR = null
 		return
 	NR = number
 	var heldNodepath = "PuzzleTile" + str(number)
@@ -45,3 +37,15 @@ func endGame():
 		minigameNode.doneMinigame("fail")
 	elif tiles == 0:
 		minigameNode.doneMinigame("win")
+
+
+func _on_tile_fill_mouse_entered(answerNR:int) -> void:
+	if NR == answerNR:
+		var answerNode = get_node("GridContainer/tileFill" + str(NR))
+		answerNode.texture = heldNode.texture_normal
+		heldNode.queue_free()
+		heldNode = null
+		NR = null
+		tiles -= 1
+		if tiles == 0:
+			endGame()

@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://byv8i5bg4b4xf"]
+[gd_scene load_steps=12 format=3 uid="uid://byv8i5bg4b4xf"]
 
 [ext_resource type="Script" path="res://scripts/minigames/cookie_game.gd" id="1_1t0vu"]
-[ext_resource type="Texture2D" uid="uid://8semkqoekq33" path="res://assets/black.png" id="2_4x1am"]
+[ext_resource type="Texture2D" uid="uid://qwk1m6loie4x" path="res://assets/items/puzzle/puzzle1.png" id="3_h7h5j"]
 [ext_resource type="Texture2D" uid="uid://5eplxqu2b8e2" path="res://assets/red.png" id="3_n3dfc"]
+[ext_resource type="Texture2D" uid="uid://bx2i62kc6dt8y" path="res://assets/items/puzzle/puzzle2.png" id="4_22uqa"]
+[ext_resource type="Texture2D" uid="uid://d1b4ys3k76oxp" path="res://assets/items/puzzle/puzzle3.png" id="5_jr7xp"]
+[ext_resource type="Texture2D" uid="uid://dkg728edtt32x" path="res://assets/items/puzzle/puzzle4.png" id="6_ehhid"]
+[ext_resource type="Texture2D" uid="uid://dl83fa7iw72uj" path="res://assets/items/puzzle/puzzle5.png" id="7_d701g"]
+[ext_resource type="Texture2D" uid="uid://cj2bxkhisq75s" path="res://assets/items/puzzle/puzzle6.png" id="8_nncs1"]
+[ext_resource type="Texture2D" uid="uid://o0hftu4h8i15" path="res://assets/items/puzzle/puzzle7.png" id="9_qfbcu"]
+[ext_resource type="Texture2D" uid="uid://r5h7wmcdvum5" path="res://assets/items/puzzle/puzzle8.png" id="10_e1ne8"]
+[ext_resource type="Texture2D" uid="uid://h1i64pdxhjoo" path="res://assets/items/puzzle/puzzle9.png" id="11_i5xoc"]
 
 [node name="CookieGame" type="Control"]
 layout_mode = 3
@@ -95,7 +103,7 @@ offset_left = 265.0
 offset_top = 130.0
 offset_right = 355.0
 offset_bottom = 220.0
-texture_normal = ExtResource("2_4x1am")
+texture_normal = ExtResource("3_h7h5j")
 
 [node name="PuzzleTile2" type="TextureButton" parent="."]
 layout_mode = 0
@@ -103,7 +111,7 @@ offset_left = 991.0
 offset_top = 490.0
 offset_right = 1081.0
 offset_bottom = 580.0
-texture_normal = ExtResource("2_4x1am")
+texture_normal = ExtResource("4_22uqa")
 
 [node name="PuzzleTile3" type="TextureButton" parent="."]
 layout_mode = 0
@@ -111,7 +119,7 @@ offset_left = 87.0
 offset_top = 33.0
 offset_right = 177.0
 offset_bottom = 123.0
-texture_normal = ExtResource("2_4x1am")
+texture_normal = ExtResource("5_jr7xp")
 
 [node name="PuzzleTile4" type="TextureButton" parent="."]
 layout_mode = 0
@@ -119,7 +127,7 @@ offset_left = 722.0
 offset_top = 58.0
 offset_right = 812.0
 offset_bottom = 148.0
-texture_normal = ExtResource("2_4x1am")
+texture_normal = ExtResource("6_ehhid")
 
 [node name="PuzzleTile5" type="TextureButton" parent="."]
 layout_mode = 0
@@ -127,7 +135,7 @@ offset_left = 774.0
 offset_top = 465.0
 offset_right = 864.0
 offset_bottom = 555.0
-texture_normal = ExtResource("2_4x1am")
+texture_normal = ExtResource("7_d701g")
 
 [node name="PuzzleTile6" type="TextureButton" parent="."]
 layout_mode = 0
@@ -135,7 +143,7 @@ offset_left = 798.0
 offset_top = 188.0
 offset_right = 888.0
 offset_bottom = 278.0
-texture_normal = ExtResource("2_4x1am")
+texture_normal = ExtResource("8_nncs1")
 
 [node name="PuzzleTile7" type="TextureButton" parent="."]
 layout_mode = 0
@@ -143,7 +151,7 @@ offset_left = 302.0
 offset_top = 442.0
 offset_right = 392.0
 offset_bottom = 532.0
-texture_normal = ExtResource("2_4x1am")
+texture_normal = ExtResource("9_qfbcu")
 
 [node name="PuzzleTile8" type="TextureButton" parent="."]
 layout_mode = 0
@@ -151,7 +159,7 @@ offset_left = 102.0
 offset_top = 300.0
 offset_right = 192.0
 offset_bottom = 390.0
-texture_normal = ExtResource("2_4x1am")
+texture_normal = ExtResource("10_e1ne8")
 
 [node name="PuzzleTile9" type="TextureButton" parent="."]
 layout_mode = 0
@@ -159,8 +167,17 @@ offset_left = 474.0
 offset_top = 32.0
 offset_right = 564.0
 offset_bottom = 122.0
-texture_normal = ExtResource("2_4x1am")
+texture_normal = ExtResource("11_i5xoc")
 
+[connection signal="mouse_entered" from="GridContainer/tileFill1" to="." method="_on_tile_fill_mouse_entered" binds= [1]]
+[connection signal="mouse_entered" from="GridContainer/tileFill2" to="." method="_on_tile_fill_mouse_entered" binds= [2]]
+[connection signal="mouse_entered" from="GridContainer/tileFill3" to="." method="_on_tile_fill_mouse_entered" binds= [3]]
+[connection signal="mouse_entered" from="GridContainer/tileFill4" to="." method="_on_tile_fill_mouse_entered" binds= [4]]
+[connection signal="mouse_entered" from="GridContainer/tileFill5" to="." method="_on_tile_fill_mouse_entered" binds= [5]]
+[connection signal="mouse_entered" from="GridContainer/tileFill6" to="." method="_on_tile_fill_mouse_entered" binds= [6]]
+[connection signal="mouse_entered" from="GridContainer/tileFill7" to="." method="_on_tile_fill_mouse_entered" binds= [7]]
+[connection signal="mouse_entered" from="GridContainer/tileFill8" to="." method="_on_tile_fill_mouse_entered" binds= [8]]
+[connection signal="mouse_entered" from="GridContainer/tileFill9" to="." method="_on_tile_fill_mouse_entered" binds= [9]]
 [connection signal="pressed" from="PuzzleTile1" to="." method="holdTile" binds= [1]]
 [connection signal="pressed" from="PuzzleTile2" to="." method="holdTile" binds= [2]]
 [connection signal="pressed" from="PuzzleTile3" to="." method="holdTile" binds= [3]]

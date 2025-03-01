@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.678636, 0.394304, 0.323168, 1)
+color = Color(0.696455, 0.269033, 0.293405, 1)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1120, 340)

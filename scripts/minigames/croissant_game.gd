@@ -26,7 +26,7 @@ func spawnBeats():
 
 func moveBeats():
 	var hits:Array = get_tree().get_nodes_in_group("collectable")
-	if hits.is_empty():
+	if hits.is_empty() and spawned == 15:
 		endGame()
 		return
 	for i in hits:
@@ -40,7 +40,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("advance_dialogue"):
 		var hits:Array = get_tree().get_nodes_in_group("collectable")
 		if hits.is_empty():
-			endGame()
 			return
 		var nearest = hits[0]
 		for i in hits:
