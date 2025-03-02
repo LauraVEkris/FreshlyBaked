@@ -7,6 +7,7 @@ var points:int
 var neededPoints:int
 var customer
 var neededCustomers:int
+var countdown
 
 #gamefeel variables
 var lines:Array[String]
@@ -56,6 +57,9 @@ func doneOrder(gainedPoints:int, order):
 	customer.doneOrder()
 
 func nextDay():
+	if countdown != null:
+		countdown.queue_free()
+		countdown = null
 	if points >= neededPoints:
 		#start next day
 		days += 1
@@ -71,3 +75,7 @@ func nextDay():
 		points = 0
 		pointsLabel.text = "points: " + str(points) + "/" + str(neededPoints)
 		customer.restartDay()
+	if days >= 5:
+			countdown = load("res://objects/timer.tscn").instantiate()
+			var controlNode = $"/root/Control"
+			controlNode.add_child(countdown)

@@ -20,7 +20,7 @@ func doneOrder():
 	newCustomer()
 
 func newCustomer():
-	if doneCustomers == GameManager.neededCustomers:
+	if doneCustomers >= GameManager.neededCustomers:
 		GameManager.nextDay()
 		return
 	if lookInt < looks.size() - 1:
