@@ -60,8 +60,8 @@ func nextDay():
 		#start next day
 		days += 1
 		dayLabel.text = "day: " + str(days)
-		neededPoints += 25
-		neededCustomers += randi_range(-1,3)
+		neededPoints += 15
+		neededCustomers += 2
 		points = 0
 		pointsLabel.text = "points: " + str(points) + "/" + str(neededPoints)
 		customer.shuffleArr()
