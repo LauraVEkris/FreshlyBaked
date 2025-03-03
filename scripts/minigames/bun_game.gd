@@ -18,7 +18,7 @@ func _ready() -> void:
 	#spawn apples
 	spawnApple()
 	#await the end of the game
-	await get_tree().create_timer(60).timeout
+	await get_tree().create_timer(45).timeout
 	endGame()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -47,9 +47,9 @@ func endGame():
 		minigameNode.doneMinigame("fail")
 	elif applecount >= 4 and applecount <= 10:
 		minigameNode.doneMinigame("neutral")
-	elif applecount >= 11 and applecount <= 19:
+	elif applecount >= 11 and applecount <= 17:
 		minigameNode.doneMinigame("win")
-	elif applecount >= 20:
+	elif applecount >= 18:
 		minigameNode.doneMinigame("perfect")
 
 func hitApple(body) -> void:

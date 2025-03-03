@@ -11,7 +11,7 @@ var NR
 #start timer on ready
 func _ready() -> void:
 	minigameNode = get_parent()
-	timer = get_tree().create_timer(60)
+	timer = get_tree().create_timer(30)
 	await timer.timeout
 	endGame()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://chbdeku86l8uj"]
+[gd_scene load_steps=14 format=3 uid="uid://chbdeku86l8uj"]
 
 [ext_resource type="Texture2D" uid="uid://dmkf4ofgd54h4" path="res://assets/screens/bakeryInterior.png" id="1_msc7s"]
 [ext_resource type="Script" path="res://scripts/customer.gd" id="2_rmutj"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dx3nllcsmxm5h" path="res://assets/items/muffin.png" id="7_wep2n"]
 [ext_resource type="Texture2D" uid="uid://pjsayd1bcwq1" path="res://assets/items/bag.png" id="8_5lrn2"]
 [ext_resource type="Texture2D" uid="uid://dynxucq11qie1" path="res://assets/screens/winEffect.png" id="9_8anpk"]
+[ext_resource type="Texture2D" uid="uid://clrm01dq0uxqo" path="res://assets/screens/bakeryOutside.png" id="11_umlfg"]
+[ext_resource type="Texture2D" uid="uid://b57fv0ntkcr7s" path="res://assets/screens/mainMenu.png" id="13_r5srh"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -182,9 +184,9 @@ text = "day: 0"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("11_umlfg")
 
 [node name="Menu" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -193,14 +195,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_ku4c5")
 
-[node name="ColorRect" type="TextureRect" parent="Menu"]
+[node name="TextureRect" type="TextureRect" parent="Menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_msc7s")
+texture = ExtResource("13_r5srh")
 
 [node name="startButton" type="Button" parent="Menu"]
 layout_mode = 1
@@ -209,12 +211,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -26.0
+offset_top = -97.5
+offset_right = 20.0
+offset_bottom = -66.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3, 3)
 text = "Start"
 
 [node name="quitButton" type="Button" parent="Menu"]
@@ -225,11 +228,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -21.0
-offset_top = 44.0
+offset_top = 14.5
 offset_right = 21.0
-offset_bottom = 75.0
+offset_bottom = 45.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3, 3)
 text = "Quit"
 
 [connection signal="pressed" from="Display/BunButton" to="Minigame" method="startMinigame" binds= ["bun"]]
