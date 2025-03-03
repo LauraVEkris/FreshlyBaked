@@ -1,6 +1,7 @@
 extends Control
 
 @onready var timerNode = $Timer
+@onready var audioPlayer = $"/root/Control/AudioStreamPlayer2D"
 var timer:SceneTreeTimer
 var minigameNode
 var tiles = 9
@@ -48,4 +49,7 @@ func _on_tile_fill_mouse_entered(answerNR:int) -> void:
 		NR = null
 		tiles -= 1
 		if tiles == 0:
+			audioPlayer.stream = load("res://sound/ding.mp3")
+			audioPlayer.play()
+			await audioPlayer.finished
 			endGame()

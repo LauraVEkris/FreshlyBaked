@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bljrd1vuhg4dm"]
 
 [ext_resource type="Texture2D" uid="uid://4ec26rqta3u7" path="res://assets/Jeffrey-plant.png" id="1_m7o8a"]
-[ext_resource type="Script" path="res://scripts/minigames/bun_game.gd" id="1_r480c"]
+[ext_resource type="Script" uid="uid://d0majcv64bicl" path="res://scripts/minigames/bun_game.gd" id="1_r480c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_la44f"]
 radius = 37.0135

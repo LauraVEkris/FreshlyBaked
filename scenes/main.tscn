@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://chbdeku86l8uj"]
 
 [ext_resource type="Texture2D" uid="uid://dmkf4ofgd54h4" path="res://assets/screens/bakeryInterior.png" id="1_msc7s"]
-[ext_resource type="Script" path="res://scripts/customer.gd" id="2_rmutj"]
+[ext_resource type="Script" uid="uid://onsyi2a24d0g" path="res://scripts/customer.gd" id="2_rmutj"]
 [ext_resource type="Texture2D" uid="uid://bxsbr4an5q6ce" path="res://assets/items/counter.png" id="2_s35vk"]
 [ext_resource type="Texture2D" uid="uid://chvi07rc5st0j" path="res://assets/items/bun.png" id="4_6ta7e"]
-[ext_resource type="Script" path="res://scripts/minigame.gd" id="4_alnpd"]
-[ext_resource type="Script" path="res://scripts/menu.gd" id="4_ku4c5"]
+[ext_resource type="Script" uid="uid://dn160pravq178" path="res://scripts/minigame.gd" id="4_alnpd"]
+[ext_resource type="Script" uid="uid://jrxt883puxtf" path="res://scripts/menu.gd" id="4_ku4c5"]
 [ext_resource type="Texture2D" uid="uid://nfusrqjf7r2i" path="res://assets/items/croissant.png" id="5_arq1r"]
 [ext_resource type="Texture2D" uid="uid://cec7l6o63yew" path="res://assets/items/cookie.png" id="6_s0kyp"]
 [ext_resource type="Texture2D" uid="uid://dx3nllcsmxm5h" path="res://assets/items/muffin.png" id="7_wep2n"]
@@ -235,6 +235,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 1.0
+autoplay = true
 
 [connection signal="pressed" from="Display/BunButton" to="Minigame" method="startMinigame" binds= ["bun"]]
 [connection signal="pressed" from="Display/CroissantButton" to="Minigame" method="startMinigame" binds= ["croissant"]]

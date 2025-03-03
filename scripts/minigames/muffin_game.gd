@@ -1,6 +1,7 @@
 extends Control
 
 @onready var player = $CharacterBody2D
+@onready var audioPlayer = $"/root/Control/AudioStreamPlayer2D"
 var result = "fail"
 var minigameNode
 var tracking = false
@@ -16,6 +17,8 @@ func _process(delta: float) -> void:
 	player.position = mousePos
 
 func hitCheck(body, grade:String):
+	audioPlayer.stream = load("res://sound/ding.mp3")
+	audioPlayer.play()
 	result = grade
 	if grade == "perfect":
 		minigameNode.doneMinigame(result)

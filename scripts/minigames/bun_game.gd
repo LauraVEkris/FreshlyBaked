@@ -2,6 +2,7 @@ extends Control
 
 @onready var player = $CharacterBody2D
 @onready var countLabel = $Label2
+@onready var audioPlayer = $"/root/Control/AudioStreamPlayer2D"
 var minigameNode
 
 var movedRight = 0
@@ -55,6 +56,8 @@ func endGame():
 func hitApple(body) -> void:
 	if body.is_in_group("collectable"):
 		#collision with apple gives points
+		audioPlayer.stream = load("res://sound/ding.mp3")
+		audioPlayer.play()
 		applecount += 1
 		countLabel.text = str(applecount)
 		body.queue_free()

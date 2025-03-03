@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceih86jovvtqu"]
 
-[ext_resource type="Script" path="res://scripts/minigames/apple.gd" id="1_74ufo"]
+[ext_resource type="Script" uid="uid://cp84pfjtdb2uw" path="res://scripts/minigames/apple.gd" id="1_74ufo"]
 [ext_resource type="Texture2D" uid="uid://c6xw28wtplsdr" path="res://assets/items/apple.png" id="2_y1so6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jumsr"]

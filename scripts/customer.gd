@@ -1,5 +1,6 @@
 extends TextureRect
 
+@onready var audioPlayer = $"../AudioStreamPlayer2D"
 var order:String
 @export var looks:Array[String]
 @export var orders:Array[String]
@@ -27,6 +28,9 @@ func newCustomer():
 		lookInt += 1
 	elif lookInt == looks.size() - 1:
 		lookInt = 0
+	#enter new customer
+	audioPlayer.stream = load("res://sound/doorBell.mp3")
+	audioPlayer.play()
 	self.texture = load(looks[lookInt]) #change to next customer
 	self.visible = true
 	#random order

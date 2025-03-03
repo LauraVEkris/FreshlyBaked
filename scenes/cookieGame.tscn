@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://byv8i5bg4b4xf"]
 
-[ext_resource type="Script" path="res://scripts/minigames/cookie_game.gd" id="1_1t0vu"]
+[ext_resource type="Script" uid="uid://dful0ehmesuaw" path="res://scripts/minigames/cookie_game.gd" id="1_1t0vu"]
 [ext_resource type="Texture2D" uid="uid://qwk1m6loie4x" path="res://assets/items/puzzle/puzzle1.png" id="3_h7h5j"]
 [ext_resource type="Texture2D" uid="uid://5eplxqu2b8e2" path="res://assets/red.png" id="3_n3dfc"]
 [ext_resource type="Texture2D" uid="uid://bx2i62kc6dt8y" path="res://assets/items/puzzle/puzzle2.png" id="4_22uqa"]

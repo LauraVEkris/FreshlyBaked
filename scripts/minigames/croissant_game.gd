@@ -3,6 +3,7 @@ extends Control
 @onready var area = $StaticBody2D/Area2D
 @onready var spawnNode = $Marker2D
 @onready var hitsLabel = $Label2
+@onready var audioPlayer = $"/root/Control/AudioStreamPlayer2D"
 var minigameNode
 var spawned = 0
 var points = 0
@@ -58,6 +59,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			nearest.queue_free()
 
 func endGame():
+	audioPlayer.stream = load("res://sound/ding.mp3")
+	audioPlayer.play()
 	if points <= 3:
 		minigameNode.doneMinigame("fail")
 	elif points >= 4 and points <= 10:
