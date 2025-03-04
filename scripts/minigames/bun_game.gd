@@ -46,11 +46,11 @@ func spawnApple():
 func endGame():
 	if applecount <= 3:
 		minigameNode.doneMinigame("fail")
-	elif applecount >= 4 and applecount <= 10:
+	elif applecount >= 4 and applecount <= 9:
 		minigameNode.doneMinigame("neutral")
-	elif applecount >= 11 and applecount <= 17:
+	elif applecount >= 10 and applecount <= 15:
 		minigameNode.doneMinigame("win")
-	elif applecount >= 18:
+	elif applecount >= 16:
 		minigameNode.doneMinigame("perfect")
 
 func hitApple(body) -> void:

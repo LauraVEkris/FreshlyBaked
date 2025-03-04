@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpgsxugv87b5"]
+[gd_scene load_steps=5 format=3 uid="uid://dpgsxugv87b5"]
 
 [ext_resource type="Script" uid="uid://dsr8qnxl1qpgx" path="res://scripts/minigames/croissant_game.gd" id="1_4q1l3"]
 [ext_resource type="Texture2D" uid="uid://8semkqoekq33" path="res://assets/black.png" id="1_qdcn7"]
+[ext_resource type="LabelSettings" uid="uid://c6g5ggnxybek0" path="res://assets/label-settings.tres" id="3_qkcmt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1exv"]
 size = Vector2(20, 194)
@@ -60,6 +61,7 @@ offset_bottom = -175.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "[space]"
+label_settings = ExtResource("3_qkcmt")
 uppercase = true
 
 [node name="Label2" type="Label" parent="."]
@@ -76,4 +78,5 @@ offset_bottom = -126.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "hits"
+label_settings = ExtResource("3_qkcmt")
 uppercase = true

@@ -34,8 +34,8 @@ func startGame():
 	cutscene = $/root/Control/cutsceneRect
 	
 	#start the first day
-	lines = ["Your first day in a new town, with new people",
-	"you enter your bakery, ready for a fresh start"]
+	lines = ["Moving to a new town, with new strangers and new opportunities.",
+	"You enter your bakery, ready for a fresh start"]
 	cutscene.visible = true
 	DialogueManager.startDialogue(lines)
 	await DialogueManager.deletedBox
