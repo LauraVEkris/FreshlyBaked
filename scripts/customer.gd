@@ -28,15 +28,15 @@ func newCustomer():
 		lookInt += 1
 	elif lookInt == looks.size() - 1:
 		lookInt = 0
-	#enter new customer
+	# enter new customer
 	audioPlayer.stream = load("res://sound/doorBell.mp3")
 	audioPlayer.play()
-	self.texture = load(looks[lookInt]) #change to next customer
+	self.texture = load(looks[lookInt]) # change to next customer
 	self.visible = true
-	#random order
+	# random order
 	var maxNR = orders.size() - 1
 	var orderNR = randi_range(0,maxNR)
-	#start dialogue with order here (order is an image)
+	# start dialogue with order here (order is an image)
 	order = orders[orderNR]
 	var orderPath = "res://assets/items/" + order + ".png"
 	DialogueManager.startOrder(orderPath)

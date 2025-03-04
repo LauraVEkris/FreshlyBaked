@@ -1,9 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://b71vunjod0fcj"]
+[gd_scene load_steps=28 format=3 uid="uid://b71vunjod0fcj"]
 
 [ext_resource type="Script" uid="uid://bna1hixxf0p2c" path="res://scripts/minigames/muffin_game.gd" id="1_dogkk"]
 [ext_resource type="Texture2D" uid="uid://4ec26rqta3u7" path="res://assets/Jeffrey-plant.png" id="2_rbu1u"]
 [ext_resource type="Texture2D" uid="uid://8semkqoekq33" path="res://assets/black.png" id="3_p4yyn"]
-[ext_resource type="Texture2D" uid="uid://5eplxqu2b8e2" path="res://assets/red.png" id="4_loxvp"]
+[ext_resource type="FontFile" uid="uid://cnyepyujqcaum" path="res://assets/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Doublespace/Peaberry-Doublespace.otf" id="4_ebd8k"]
+[ext_resource type="Texture2D" uid="uid://dhee7um1q3lb1" path="res://assets/items/muffinWin.png" id="5_xhkdn"]
+[ext_resource type="LabelSettings" uid="uid://c6g5ggnxybek0" path="res://assets/label-settings.tres" id="6_xhkdn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_02dgd"]
 radius = 12.0
@@ -54,8 +56,20 @@ load_path = "res://.godot/imported/black.png-0c928088330c4cddf9e28b960b6ccae3.ct
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hb1tv"]
 size = Vector2(393.932, 66.0083)
 
+[sub_resource type="LabelSettings" id="LabelSettings_66wvj"]
+line_spacing = 2.0
+font = ExtResource("4_ebd8k")
+font_size = 160
+font_color = Color(0.0938003, 0.0169189, 0.231623, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o43rt"]
 size = Vector2(110, 362)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n4wo1"]
+line_spacing = 2.0
+font = ExtResource("4_ebd8k")
+font_size = 160
+font_color = Color(0.0938003, 0.0169189, 0.231623, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8r1nv"]
 size = Vector2(110, 524)
@@ -279,14 +293,15 @@ texture = SubResource("CompressedTexture2D_13bql")
 position = Vector2(-470, -145)
 shape = SubResource("RectangleShape2D_bihok")
 
-[node name="checkPoint1" type="TextureRect" parent="."]
+[node name="checkPoint1" type="Label" parent="."]
 layout_mode = 0
 offset_left = 314.0
 offset_top = 243.0
 offset_right = 404.0
 offset_bottom = 333.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_loxvp")
+text = "←"
+label_settings = SubResource("LabelSettings_66wvj")
 
 [node name="Area2D" type="Area2D" parent="checkPoint1"]
 
@@ -294,19 +309,20 @@ texture = ExtResource("4_loxvp")
 position = Vector2(47, 43)
 shape = SubResource("RectangleShape2D_o43rt")
 
-[node name="checkPoint2" type="TextureRect" parent="."]
+[node name="checkPoint2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 433.0
-offset_top = 476.0
-offset_right = 523.0
-offset_bottom = 566.0
+offset_left = 436.0
+offset_top = 560.0
+offset_right = 546.0
+offset_bottom = 720.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_loxvp")
+text = "→"
+label_settings = SubResource("LabelSettings_n4wo1")
 
 [node name="Area2D" type="Area2D" parent="checkPoint2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="checkPoint2/Area2D"]
-position = Vector2(47, 46)
+position = Vector2(40, -114)
 shape = SubResource("RectangleShape2D_8r1nv")
 
 [node name="checkPoint3" type="TextureRect" parent="."]
@@ -316,13 +332,23 @@ offset_top = 486.0
 offset_right = 1079.0
 offset_bottom = 576.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_loxvp")
+texture = ExtResource("5_xhkdn")
 
 [node name="Area2D" type="Area2D" parent="checkPoint3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="checkPoint3/Area2D"]
 position = Vector2(44, 38)
 shape = SubResource("RectangleShape2D_knqrl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 262.0
+offset_right = 840.0
+offset_bottom = 281.0
+text = "[click]"
+label_settings = ExtResource("6_xhkdn")
+uppercase = true
 
 [connection signal="pressed" from="CharacterBody2D/TextureButton" to="." method="startTracking"]
 [connection signal="body_entered" from="outerWalls/wall3" to="." method="death"]

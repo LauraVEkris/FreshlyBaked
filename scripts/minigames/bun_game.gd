@@ -23,14 +23,14 @@ func _ready() -> void:
 	endGame()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("left") && movedLeft != 15:
+	if event.is_action_pressed("left") && movedLeft != 10:
 		#move player left
-		player.position.x -= 10
+		player.position.x -= 15
 		movedLeft += 1
 		movedRight -= 1
-	elif event.is_action_pressed("right") && movedRight != 15:
+	elif event.is_action_pressed("right") && movedRight != 10:
 		#move player right
-		player.position.x += 10
+		player.position.x += 15
 		movedLeft -= 1
 		movedRight += 1
 

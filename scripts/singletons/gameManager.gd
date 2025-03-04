@@ -36,6 +36,7 @@ func startGame():
 	#start the first day
 	lines = ["Moving to a new town, with new strangers and new opportunities",
 	"You enter your bakery, ready for a fresh start"]
+	cutscene.texture = load("res://assets/screens/bakeryOutside.png")
 	cutscene.visible = true
 	DialogueManager.startDialogue(lines)
 	await DialogueManager.deletedBox
@@ -57,6 +58,10 @@ func doneOrder(gainedPoints:int, order):
 	customer.doneOrder()
 
 func nextDay():
+	cutscene.texture = load("res://assets/screens/sleepScreen.png")
+	cutscene.visible = true
+	await get_tree().create_timer(5).timeout
+	cutscene.visible = false
 	if countdown != null:
 		countdown.queue_free()
 		countdown = null
