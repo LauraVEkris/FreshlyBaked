@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsr8qnxl1qpgx" path="res://scripts/minigames/croissant_game.gd" id="1_4q1l3"]
 [ext_resource type="Texture2D" uid="uid://8semkqoekq33" path="res://assets/black.png" id="1_qdcn7"]
-[ext_resource type="LabelSettings" uid="uid://c6g5ggnxybek0" path="res://assets/label-settings.tres" id="3_qkcmt"]
+[ext_resource type="LabelSettings" uid="uid://c6g5ggnxybek0" path="res://assets/theme/label-settings.tres" id="3_qkcmt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1exv"]
 size = Vector2(20, 194)

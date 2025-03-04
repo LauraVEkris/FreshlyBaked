@@ -32,7 +32,7 @@ func doneMinigame(result):
 		resultScreen.texture = load("res://assets/screens/failScreen.png")
 		var pastry = "res://assets/items/" + order + "Fail.png"
 		resultPastry.texture = load(pastry)
-		points = 2
+		points = -5
 	elif result == "neutral":
 		resultScreen.texture = load("res://assets/screens/neutralScreen.png")
 		var pastry = "res://assets/items/" + order + ".png"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://by31b85r4bc2n" path="res://scripts/text_box.gd" id="1_63y4b"]
 [ext_resource type="Texture2D" uid="uid://c5xkdhlnbgadt" path="res://assets/textbox.png" id="2_2kmlu"]
-[ext_resource type="LabelSettings" uid="uid://c6g5ggnxybek0" path="res://assets/label-settings.tres" id="3_aih04"]
+[ext_resource type="LabelSettings" uid="uid://c6g5ggnxybek0" path="res://assets/theme/label-settings.tres" id="3_aih04"]
 
 [node name="TextBox" type="MarginContainer"]
 script = ExtResource("1_63y4b")
