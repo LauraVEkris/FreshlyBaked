@@ -37,7 +37,9 @@ func endGame():
 	if tiles != 0:
 		minigameNode.doneMinigame("fail")
 	elif tiles == 0:
-		minigameNode.doneMinigame("win")
+		if int(timer.time_left) >= 20:
+			minigameNode.doneMinigame("perfect")
+		else: minigameNode.doneMinigame("win")
 
 
 func _on_tile_fill_mouse_entered(answerNR:int) -> void:

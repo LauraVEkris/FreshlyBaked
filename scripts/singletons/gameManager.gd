@@ -34,7 +34,7 @@ func startGame():
 	cutscene = $/root/Control/cutsceneRect
 	
 	#start the first day
-	lines = ["Moving to a new town, with new strangers and new opportunities.",
+	lines = ["Moving to a new town, with new strangers and new opportunities",
 	"You enter your bakery, ready for a fresh start"]
 	cutscene.visible = true
 	DialogueManager.startDialogue(lines)
@@ -64,7 +64,7 @@ func nextDay():
 		#start next day
 		days += 1
 		dayLabel.text = "day: " + str(days)
-		neededPoints += 15
+		neededPoints += 20
 		neededCustomers += 2
 		points = 0
 		pointsLabel.text = "points: " + str(points) + "/" + str(neededPoints)
