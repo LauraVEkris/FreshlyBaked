@@ -287,3 +287,4 @@ parameters/looping = true
 [connection signal="pressed" from="Menu/startButton" to="Menu" method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu/quitButton" to="Menu" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="AudioMuteButton" to="Menu" method="muteAudio"]
+[connection signal="finished" from="MusicStreamPlayer2D" to="Menu" method="_on_music_stream_player_2d_finished"]

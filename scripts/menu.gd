@@ -2,6 +2,7 @@ extends Node
 
 var audioState = true
 @onready var audioButton = $"../AudioMuteButton"
+@onready var musicPlayer = $"../MusicStreamPlayer2D"
 
 
 func _ready() -> void:
@@ -22,3 +23,7 @@ func muteAudio():
 	elif audioState == false:
 		audioState = true
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"),false)
+
+
+func _on_music_stream_player_2d_finished() -> void:
+	musicPlayer.play()

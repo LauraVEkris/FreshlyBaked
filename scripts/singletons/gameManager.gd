@@ -58,6 +58,7 @@ func doneOrder(gainedPoints:int, order):
 	customer.doneOrder()
 
 func nextDay():
+	DialogueManager.deleteTextbox()
 	cutscene.texture = load("res://assets/screens/sleepScreen.png")
 	cutscene.visible = true
 	await get_tree().create_timer(5).timeout
