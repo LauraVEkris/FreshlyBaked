@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://bljrd1vuhg4dm"]
+
+[ext_resource type="Texture2D" uid="uid://4ec26rqta3u7" path="res://assets/Jeffrey-plant.png" id="1_m7o8a"]
+[ext_resource type="Script" uid="uid://d0majcv64bicl" path="res://scripts/minigames/bun_game.gd" id="1_r480c"]
+[ext_resource type="FontFile" uid="uid://cnyepyujqcaum" path="res://assets/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Doublespace/Peaberry-Doublespace.otf" id="3_ufydk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r2vs5"]
+line_spacing = 2.0
+font = ExtResource("3_ufydk")
+font_size = 32
+font_color = Color(0.0938003, 0.0169189, 0.231623, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jva46"]
+line_spacing = 2.0
+font = ExtResource("3_ufydk")
+font_size = 32
+font_color = Color(0.0938003, 0.0169189, 0.231623, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_la44f"]
+radius = 37.0135
+
+[node name="BunGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r480c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.307636, 0.664722, 0.760808, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 536.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.306619, 0.700263, 0.480651, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -29.5
+offset_top = -198.0
+offset_right = 29.5
+offset_bottom = -175.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "[←    →]"
+label_settings = SubResource("LabelSettings_r2vs5")
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -248.0
+offset_right = 19.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "hits"
+label_settings = SubResource("LabelSettings_jva46")
+uppercase = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(574, 536)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_m7o8a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_la44f")

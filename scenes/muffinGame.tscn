@@ -1,0 +1,369 @@
+[gd_scene load_steps=28 format=3 uid="uid://b71vunjod0fcj"]
+
+[ext_resource type="Script" uid="uid://bna1hixxf0p2c" path="res://scripts/minigames/muffin_game.gd" id="1_dogkk"]
+[ext_resource type="Texture2D" uid="uid://4ec26rqta3u7" path="res://assets/Jeffrey-plant.png" id="2_rbu1u"]
+[ext_resource type="Texture2D" uid="uid://8semkqoekq33" path="res://assets/black.png" id="3_p4yyn"]
+[ext_resource type="FontFile" uid="uid://cnyepyujqcaum" path="res://assets/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Doublespace/Peaberry-Doublespace.otf" id="4_ebd8k"]
+[ext_resource type="Texture2D" uid="uid://dhee7um1q3lb1" path="res://assets/items/muffinWin.png" id="5_xhkdn"]
+[ext_resource type="LabelSettings" uid="uid://c6g5ggnxybek0" path="res://assets/theme/label-settings.tres" id="6_xhkdn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_02dgd"]
+radius = 12.0
+height = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n11vp"]
+size = Vector2(1391.99, 74.9534)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8v67"]
+load_path = "res://.godot/imported/black.png-0c928088330c4cddf9e28b960b6ccae3.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kr4u0"]
+size = Vector2(2348, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l64ca"]
+size = Vector2(1620, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm4aa"]
+size = Vector2(1746, 66)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_btexs"]
+load_path = "res://.godot/imported/black.png-0c928088330c4cddf9e28b960b6ccae3.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46kf3"]
+size = Vector2(372, 66)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_stp7i"]
+load_path = "res://.godot/imported/black.png-0c928088330c4cddf9e28b960b6ccae3.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elcw3"]
+size = Vector2(403.95, 74.9534)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g08bl"]
+load_path = "res://.godot/imported/black.png-0c928088330c4cddf9e28b960b6ccae3.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rtyo"]
+size = Vector2(381.96, 66.0083)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_13bql"]
+load_path = "res://.godot/imported/black.png-0c928088330c4cddf9e28b960b6ccae3.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bihok"]
+size = Vector2(372, 66)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pjvu8"]
+load_path = "res://.godot/imported/black.png-0c928088330c4cddf9e28b960b6ccae3.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb1tv"]
+size = Vector2(393.932, 66.0083)
+
+[sub_resource type="LabelSettings" id="LabelSettings_66wvj"]
+line_spacing = 2.0
+font = ExtResource("4_ebd8k")
+font_size = 160
+font_color = Color(0.0938003, 0.0169189, 0.231623, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o43rt"]
+size = Vector2(110, 362)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n4wo1"]
+line_spacing = 2.0
+font = ExtResource("4_ebd8k")
+font_size = 160
+font_color = Color(0.0938003, 0.0169189, 0.231623, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r1nv"]
+size = Vector2(110, 524)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knqrl"]
+size = Vector2(110, 486)
+
+[node name="MuffinGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dogkk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.651733, 0.566447, 0.784079, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(804, 320)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_rbu1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -3)
+rotation = 0.0136885
+shape = SubResource("CapsuleShape2D_02dgd")
+
+[node name="TextureButton" type="TextureButton" parent="CharacterBody2D"]
+offset_left = -19.0
+offset_top = -23.0
+offset_right = 21.0
+offset_bottom = 17.0
+
+[node name="outerWalls" type="CanvasGroup" parent="."]
+position = Vector2(1151, 288)
+rotation = 0.785398
+scale = Vector2(0.5, 0.5)
+
+[node name="wall3" type="Area2D" parent="outerWalls"]
+
+[node name="Sprite2D" type="Sprite2D" parent="outerWalls/wall3"]
+position = Vector2(55.5144, 57.5144)
+rotation = 0.785398
+scale = Vector2(14.9728, 0.722222)
+texture = ExtResource("3_p4yyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outerWalls/wall3"]
+position = Vector2(48.2939, 42.2134)
+rotation = 0.780862
+shape = SubResource("RectangleShape2D_n11vp")
+
+[node name="wall5" type="Area2D" parent="outerWalls"]
+position = Vector2(-1612.2, 1598.06)
+
+[node name="Sprite2D" type="Sprite2D" parent="outerWalls/wall5"]
+position = Vector2(55.5144, 57.5144)
+rotation = 0.785398
+scale = Vector2(14.9728, 0.722222)
+texture = ExtResource("3_p4yyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outerWalls/wall5"]
+position = Vector2(48.2939, 42.2134)
+rotation = 0.780862
+shape = SubResource("RectangleShape2D_n11vp")
+
+[node name="wall7" type="Area2D" parent="outerWalls"]
+position = Vector2(-1479.27, 848.528)
+rotation = -0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="outerWalls/wall7"]
+position = Vector2(514, -144)
+scale = Vector2(25.9556, 0.722222)
+texture = SubResource("CompressedTexture2D_j8v67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outerWalls/wall7"]
+position = Vector2(518, -145)
+shape = SubResource("RectangleShape2D_kr4u0")
+
+[node name="wall6" type="Area2D" parent="outerWalls"]
+position = Vector2(-574.171, 1764.94)
+rotation = -0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="outerWalls/wall6"]
+position = Vector2(514, -144)
+scale = Vector2(25.9556, 0.722222)
+texture = SubResource("CompressedTexture2D_j8v67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="outerWalls/wall6"]
+position = Vector2(518, -145)
+shape = SubResource("RectangleShape2D_kr4u0")
+
+[node name="obstaclesWalls" type="CanvasGroup" parent="."]
+position = Vector2(685, 301)
+scale = Vector2(0.5, 0.5)
+
+[node name="wall" type="Area2D" parent="obstaclesWalls"]
+
+[node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall"]
+position = Vector2(134, -286)
+scale = Vector2(18, 0.722222)
+texture = ExtResource("3_p4yyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclesWalls/wall"]
+position = Vector2(132, -284)
+shape = SubResource("RectangleShape2D_l64ca")
+
+[node name="wall2" type="Area2D" parent="obstaclesWalls"]
+position = Vector2(-18, 280)
+
+[node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall2"]
+position = Vector2(91, -144)
+scale = Vector2(19.4444, 0.722222)
+texture = ExtResource("3_p4yyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclesWalls/wall2"]
+position = Vector2(91, -145)
+shape = SubResource("RectangleShape2D_gm4aa")
+
+[node name="wall3" type="Area2D" parent="obstaclesWalls"]
+position = Vector2(-712, 282)
+
+[node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall3"]
+position = Vector2(-468, -144)
+scale = Vector2(4.13333, 0.722222)
+texture = SubResource("CompressedTexture2D_btexs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclesWalls/wall3"]
+position = Vector2(-470, -145)
+shape = SubResource("RectangleShape2D_46kf3")
+
+[node name="wall4" type="Area2D" parent="obstaclesWalls"]
+position = Vector2(-728, -264)
+rotation = 0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall4"]
+position = Vector2(-109.081, -152.214)
+rotation = 0.785398
+scale = Vector2(4.38304, 0.722222)
+texture = SubResource("CompressedTexture2D_stp7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclesWalls/wall4"]
+position = Vector2(-112.607, -153.225)
+rotation = 0.780862
+shape = SubResource("RectangleShape2D_elcw3")
+
+[node name="wall5" type="Area2D" parent="obstaclesWalls"]
+position = Vector2(-800, 546)
+rotation = 0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall5"]
+position = Vector2(-116.224, -159.357)
+rotation = 0.785398
+scale = Vector2(4.15855, 0.722222)
+texture = SubResource("CompressedTexture2D_g08bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclesWalls/wall5"]
+position = Vector2(-120.218, -161.166)
+rotation = 0.780862
+shape = SubResource("RectangleShape2D_7rtyo")
+
+[node name="wall6" type="Area2D" parent="obstaclesWalls"]
+position = Vector2(354, 658)
+
+[node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall6"]
+position = Vector2(-468, -144)
+scale = Vector2(4.13333, 0.722222)
+texture = SubResource("CompressedTexture2D_13bql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclesWalls/wall6"]
+position = Vector2(-470, -145)
+shape = SubResource("RectangleShape2D_bihok")
+
+[node name="wall7" type="Area2D" parent="obstaclesWalls"]
+position = Vector2(-360, 542)
+rotation = 0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall7"]
+position = Vector2(-111.75, -154.884)
+rotation = 0.785398
+scale = Vector2(4.29914, 0.722222)
+texture = SubResource("CompressedTexture2D_pjvu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclesWalls/wall7"]
+position = Vector2(-115.966, -156.952)
+rotation = 0.780862
+shape = SubResource("RectangleShape2D_hb1tv")
+
+[node name="wall8" type="Area2D" parent="obstaclesWalls"]
+position = Vector2(166, 640)
+rotation = 0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall8"]
+position = Vector2(-111.75, -154.884)
+rotation = 0.785398
+scale = Vector2(4.29914, 0.722222)
+texture = SubResource("CompressedTexture2D_pjvu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclesWalls/wall8"]
+position = Vector2(-106.066, -145.664)
+rotation = 0.780862
+shape = SubResource("RectangleShape2D_hb1tv")
+
+[node name="wall9" type="Area2D" parent="obstaclesWalls"]
+position = Vector2(818, 434)
+
+[node name="Sprite2D" type="Sprite2D" parent="obstaclesWalls/wall9"]
+position = Vector2(-468, -144)
+scale = Vector2(4.13333, 0.722222)
+texture = SubResource("CompressedTexture2D_13bql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="obstaclesWalls/wall9"]
+position = Vector2(-470, -145)
+shape = SubResource("RectangleShape2D_bihok")
+
+[node name="checkPoint1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 243.0
+offset_right = 404.0
+offset_bottom = 333.0
+scale = Vector2(0.5, 0.5)
+text = "←"
+label_settings = SubResource("LabelSettings_66wvj")
+
+[node name="Area2D" type="Area2D" parent="checkPoint1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="checkPoint1/Area2D"]
+position = Vector2(47, 43)
+shape = SubResource("RectangleShape2D_o43rt")
+
+[node name="checkPoint2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 560.0
+offset_right = 546.0
+offset_bottom = 720.0
+scale = Vector2(0.5, 0.5)
+text = "→"
+label_settings = SubResource("LabelSettings_n4wo1")
+
+[node name="Area2D" type="Area2D" parent="checkPoint2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="checkPoint2/Area2D"]
+position = Vector2(40, -114)
+shape = SubResource("RectangleShape2D_8r1nv")
+
+[node name="checkPoint3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 989.0
+offset_top = 486.0
+offset_right = 1079.0
+offset_bottom = 576.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xhkdn")
+
+[node name="Area2D" type="Area2D" parent="checkPoint3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="checkPoint3/Area2D"]
+position = Vector2(44, 38)
+shape = SubResource("RectangleShape2D_knqrl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 262.0
+offset_right = 840.0
+offset_bottom = 281.0
+text = "[click]"
+label_settings = ExtResource("6_xhkdn")
+uppercase = true
+
+[connection signal="pressed" from="CharacterBody2D/TextureButton" to="." method="startTracking"]
+[connection signal="body_entered" from="outerWalls/wall3" to="." method="death"]
+[connection signal="body_entered" from="outerWalls/wall5" to="." method="death"]
+[connection signal="body_entered" from="outerWalls/wall7" to="." method="death"]
+[connection signal="body_entered" from="outerWalls/wall6" to="." method="death"]
+[connection signal="body_entered" from="obstaclesWalls/wall" to="." method="death"]
+[connection signal="body_entered" from="obstaclesWalls/wall2" to="." method="death"]
+[connection signal="body_entered" from="obstaclesWalls/wall3" to="." method="death"]
+[connection signal="body_entered" from="obstaclesWalls/wall4" to="." method="death"]
+[connection signal="body_entered" from="obstaclesWalls/wall5" to="." method="death"]
+[connection signal="body_entered" from="obstaclesWalls/wall6" to="." method="death"]
+[connection signal="body_entered" from="obstaclesWalls/wall7" to="." method="death"]
+[connection signal="body_entered" from="obstaclesWalls/wall8" to="." method="death"]
+[connection signal="body_entered" from="obstaclesWalls/wall9" to="." method="death"]
+[connection signal="body_entered" from="checkPoint1/Area2D" to="." method="hitCheck" binds= ["neutral"]]
+[connection signal="body_entered" from="checkPoint2/Area2D" to="." method="hitCheck" binds= ["win"]]
+[connection signal="body_entered" from="checkPoint3/Area2D" to="." method="hitCheck" binds= ["perfect"]]

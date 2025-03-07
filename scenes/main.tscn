@@ -1,0 +1,290 @@
+[gd_scene load_steps=20 format=3 uid="uid://chbdeku86l8uj"]
+
+[ext_resource type="Texture2D" uid="uid://dmkf4ofgd54h4" path="res://assets/screens/bakeryInterior.png" id="1_msc7s"]
+[ext_resource type="Script" uid="uid://onsyi2a24d0g" path="res://scripts/customer.gd" id="2_rmutj"]
+[ext_resource type="Texture2D" uid="uid://bxsbr4an5q6ce" path="res://assets/items/counter.png" id="2_s35vk"]
+[ext_resource type="Texture2D" uid="uid://chvi07rc5st0j" path="res://assets/items/bun.png" id="4_6ta7e"]
+[ext_resource type="Script" uid="uid://dn160pravq178" path="res://scripts/minigame.gd" id="4_alnpd"]
+[ext_resource type="Script" uid="uid://jrxt883puxtf" path="res://scripts/menu.gd" id="4_ku4c5"]
+[ext_resource type="Texture2D" uid="uid://nfusrqjf7r2i" path="res://assets/items/croissant.png" id="5_arq1r"]
+[ext_resource type="Texture2D" uid="uid://cec7l6o63yew" path="res://assets/items/cookie.png" id="6_s0kyp"]
+[ext_resource type="Texture2D" uid="uid://dx3nllcsmxm5h" path="res://assets/items/muffin.png" id="7_wep2n"]
+[ext_resource type="Texture2D" uid="uid://pjsayd1bcwq1" path="res://assets/items/bag.png" id="8_5lrn2"]
+[ext_resource type="Texture2D" uid="uid://dynxucq11qie1" path="res://assets/screens/winEffect.png" id="9_8anpk"]
+[ext_resource type="Texture2D" uid="uid://clrm01dq0uxqo" path="res://assets/screens/bakeryOutside.png" id="11_umlfg"]
+[ext_resource type="Texture2D" uid="uid://b57fv0ntkcr7s" path="res://assets/screens/mainMenu.png" id="13_r5srh"]
+[ext_resource type="AudioStream" uid="uid://dl04oj0dga4en" path="res://sound/podcast-soothing-serene-smooth-jazz-romantic-cafe-vibes-213058.mp3" id="14_a8y0u"]
+[ext_resource type="FontFile" uid="uid://cnyepyujqcaum" path="res://assets/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Doublespace/Peaberry-Doublespace.otf" id="14_jkv2x"]
+[ext_resource type="Theme" uid="uid://ckp56xlaraxgq" path="res://assets/theme/buttonTheme.tres" id="15_jbj1t"]
+[ext_resource type="StyleBox" uid="uid://ce3twqnudyxuf" path="res://assets/theme/Button.stylebox" id="16_muem4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jkv2x"]
+line_spacing = 2.0
+font = ExtResource("14_jkv2x")
+font_size = 32
+font_color = Color(0.0938003, 0.0169189, 0.231623, 1)
+outline_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_jbj1t"]
+line_spacing = 2.0
+font = ExtResource("14_jkv2x")
+font_size = 32
+font_color = Color(0.0938003, 0.0169189, 0.231623, 1)
+outline_size = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("15_jbj1t")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_msc7s")
+
+[node name="Customer" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_rmutj")
+looks = Array[String](["res://assets/characters/goth.png", "res://assets/characters/jock.png", "res://assets/characters/coldGirl.png", "res://assets/characters/punk.png", "res://assets/characters/birdGirl.png", "res://assets/characters/cat.png", "res://assets/characters/kids.png", "res://assets/characters/nerd.png", "res://assets/characters/oldMan.png", "res://assets/characters/witch.png"])
+orders = Array[String](["bun", "croissant", "cookie", "muffin"])
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -352.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_s35vk")
+stretch_mode = 2
+
+[node name="Display" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 403.0
+offset_top = 353.0
+offset_right = 484.0
+offset_bottom = 427.0
+
+[node name="BunButton" type="TextureButton" parent="Display"]
+layout_mode = 0
+offset_left = -176.0
+offset_top = 88.0
+offset_right = -112.0
+offset_bottom = 152.0
+texture_normal = ExtResource("4_6ta7e")
+stretch_mode = 0
+
+[node name="CroissantButton" type="TextureButton" parent="Display"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 83.0
+offset_right = 96.0
+offset_bottom = 143.0
+texture_normal = ExtResource("5_arq1r")
+stretch_mode = 0
+
+[node name="CookieButton" type="TextureButton" parent="Display"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 73.0
+offset_right = 207.0
+offset_bottom = 137.0
+texture_normal = ExtResource("6_s0kyp")
+stretch_mode = 0
+
+[node name="MuffinButton" type="TextureButton" parent="Display"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 64.0
+offset_right = 420.0
+offset_bottom = 128.0
+texture_normal = ExtResource("7_wep2n")
+stretch_mode = 0
+
+[node name="bagRect" type="TextureRect" parent="Display"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = -52.0
+offset_right = 157.0
+offset_bottom = 12.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_5lrn2")
+
+[node name="Minigame" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_alnpd")
+
+[node name="ResultRect" type="TextureRect" parent="Minigame"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Minigame/ResultRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -57.0
+offset_right = -17.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="resultEffect" type="TextureRect" parent="Minigame/ResultRect"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_8anpk")
+
+[node name="pointsLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 33.0
+grow_horizontal = 0
+text = "00/00"
+label_settings = SubResource("LabelSettings_jkv2x")
+
+[node name="dayLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_top = 50.0
+offset_right = -10.0
+offset_bottom = 73.0
+grow_horizontal = 0
+text = "day: 0"
+label_settings = SubResource("LabelSettings_jbj1t")
+
+[node name="cutsceneRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_umlfg")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ku4c5")
+
+[node name="TextureRect" type="TextureRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_r5srh")
+
+[node name="startButton" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -103.5
+offset_right = 20.5
+offset_bottom = -72.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Start"
+
+[node name="quitButton" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = 16.0
+offset_right = 28.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Quit"
+
+[node name="AudioMuteButton" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_right = 44.0
+offset_bottom = -24.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+theme_override_styles/hover = ExtResource("16_muem4")
+text = "Audio"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+volume_db = 1.0
+autoplay = true
+
+[node name="MusicStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_a8y0u")
+volume_db = 2.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Display/BunButton" to="Minigame" method="startMinigame" binds= ["bun"]]
+[connection signal="pressed" from="Display/CroissantButton" to="Minigame" method="startMinigame" binds= ["croissant"]]
+[connection signal="pressed" from="Display/CookieButton" to="Minigame" method="startMinigame" binds= ["cookie"]]
+[connection signal="pressed" from="Display/MuffinButton" to="Minigame" method="startMinigame" binds= ["muffin"]]
+[connection signal="pressed" from="Menu/startButton" to="Menu" method="_on_start_button_pressed"]
+[connection signal="pressed" from="Menu/quitButton" to="Menu" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="AudioMuteButton" to="Menu" method="muteAudio"]
+[connection signal="finished" from="MusicStreamPlayer2D" to="Menu" method="_on_music_stream_player_2d_finished"]
